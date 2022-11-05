@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;1,400;1,500&display=swap");
+
+/* Global Variables */
+:root {
+  --main: #df091e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Besley", serif;
+  border: none;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+}
+*::selection {
+  background: var(--main);
+  color: #000;
+}
+
+/* SideBar */
+.SideBar {
+  position: fixed;
+  height: 100%;
+  width: 250px;
+  background: #000;
+  color: #fff;
+  transition: 0.5s ease all;
+}
+.SideBar.active {
+  width: 60px;
+}
+.SideBar .logo {
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+.SideBar .logo > span {
+  font-size: 25px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.SideBar.active .logo > span {
+  font-size: 12px;
+}
+/* NavLinks */
+.Nav_Links {
+  margin-top: 10px;
+}
+.Nav_Links li {
+  position: relative;
+  height: 50px;
+}
+.Nav_Links li a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.Nav_Links li a.active,
+.Nav_Links li a:hover {
+  background-color: var(--main);
+  color: #fff;
+}
+
+.Nav_Links li a i {
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  min-width: 60px;
+}
+.Nav_Links li a span {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+/* SideBar */
+
+/* Home Section Start */
+.Home {
+  position: relative;
+  background: #f5f5f5;
+  min-height: 100vh;
+  width: calc(100% - 250px);
+  left: 250px;
+  transition: all 0.5s ease;
+}
+.Home nav {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  width: calc(100% - 250px);
+  left: 250px;
+  position: fixed;
+  z-index: 1000;
+  padding: 0 20px;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+  transition: 0.5s all ease;
+}
+.SideBar.active ~ .Home nav,
+.SideBar.active ~ .Home {
+  left: 60px;
+  width: calc(100% - 60px);
+}
+.Home .SideBarButton {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 25px;
+}
+.Home .SideBarButton i {
+  margin-right: 10px;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+/* SearchBox */
+.Home nav .SearchBox {
+  position: relative;
+  max-width: 550px;
+  height: 50px;
+  width: 100%;
+  margin: 0 20px;
+}
+.SearchBox input {
+  width: 100%;
+  height: 100%;
+  background: #f5f6f5;
+  border: 1.2px solid #efeef1;
+  border-radius: 5px;
+  padding: 0 15px;
+  font-size: 18px;
+}
+.SearchBox .fa-search {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #ff1e00;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 40px;
+  color: #fff;
+  text-align: center;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Profile */
+.Profile {
+  display: flex;
+  background: #f5f6f5;
+  align-items: center;
+  border: 2px solid #efeef1;
+  height: 50px;
+  min-width: 190px;
+  padding: 0 15px 0 2px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s all ease;
+}
+.Profile img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.Profile span {
+  font-weight: 600;
+  font-size: 15px;
+  color: #222;
+  margin: 0 10px;
+}
+
+/* Content */
+.Home .HomeContent {
+  position: relative;
+  padding-top: 105px;
+}
+.HomeContent .Overview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  margin-bottom: 25px;
+}
+.HomeContent .Overview .box {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+  padding: 15px 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% / 4 - 15px);
+  border-radius: 14px;
+  background: #fff;
+}
+.HomeContent .Overview .box .title,
+.Sales .Recentsales .title {
+  font-size: 20px;
+  font-weight: 600;
+}
+.HomeContent .Overview .box .num {
+  display: inline-block;
+  font-size: 35px;
+  font-weight: 400;
+  margin-top: -7px;
+}
+.HomeContent .Overview .box .icon {
+  display: flex;
+  align-items: center;
+}
+.Home .Overview .box .icon i {
+  height: 20px;
+  width: 20px;
+  background: #d47575;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+.Home .Overview .box .icon span {
+  font-size: 12px;
+}
+.Home .Overview .box .iconsOut {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  font-size: 32px;
+  background: #ccc;
+  margin: -15px 0 0 6px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* Recent Sales */
+.Home .Sales .Recentsales {
+  background: #fff;
+  width: 65%;
+  margin: 0 20px;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.7);
+  border-radius: 13px;
+  padding: 20px 30px;
+}
+.Sales .Date {
+  font-weight: 600;
+  font-size: 25px;
+}
+.Sales .SalesDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Sales .SalesDetails li {
+  margin: 8px 0;
+}
+.Sales .SalesDetails li a {
+  color: #222;
+  font-size: 18px;
+  font-weight: 400;
+}
+.Sales .SalesDetails li a:hover {
+  background: #888;
+}
+
+.Sales {
+  display: flex;
+  justify-content: space-between;
+}
+/* Top Products */
+.Home .Sales .TopProducts {
+  background: #fff;
+  width: 35%;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.7);
+  padding: 20px 30px;
+  border-radius: 12px;
+  margin: 0 20px 0 0;
+}
+.TopSalesD li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+.TopSalesD img {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #222;
+}
+.TopSalesD li a {
+  display: flex;
+  align-items: center;
+}
+.TopSalesD li a .product_name,
+.TopSalesD .price {
+  color: #222;
+  font-size: 17px;
+  font-weight: 500;
+}
+/* Top Products */
+
+/* Home Section End */
+
+/* For Responsive */
+/* Media Query */
+@media (max-width: 1150px) {
+  .SideBar {
+    width: 60px;
+  }
+  .SideBar.active {
+    width: 220px;
+  }
+  .Home {
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+  .SideBar.active ~ .Home {
+    width: calc(100% - 220px);
+    left: 220px;
+    overflow: hidden;
+  }
+  .Home nav {
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+  .SideBar.active ~ .Home nav {
+    width: calc(100% - 220px);
+    left: 220px;
+  }
+  .SideBar .logo {
+    display: none;
+  }
+}
+@media (max-width: 1100px) {
+  .Home .Sales {
+    flex-direction: column;
+  }
+  .Home .Sales .box {
+    width: 100%;
+    margin-bottom: 31px;
+    overflow-x: scroll;
+  }
+  .Home .Sales .TopSalesD {
+    margin: 0;
+  }
+}
+@media (max-width: 1000px) {
+  .Overview .box {
+    width: calc(100% / 2 - 15px);
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 750px) {
+  nav .SideBarButton .dashboard,
+  nav .Profile span,
+  nav .Profile i {
+    display: none;
+  }
+  .Home nav .Profile {
+    min-width: 40px;
+    height: 50px;
+  }
+  .Home .Sales .SalesDetails {
+    width: 560px;
+  }
+  .Overview .box {
+    width: 100% !important;
+    margin-bottom: 14px !important;
+  }
+  .SideBar.active ~ .Home nav .Profile {
+    display: none;
+  }
+}
+@media (max-width: 400px) {
+  .SideBar {
+    width: 0;
+  }
+  .SideBar.active {
+    width: 60px;
+  }
+  .Home {
+    width: 100%;
+    left: 0;
+  }
+  .SideBar.active ~ .Home {
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+  .Home nav {
+    left: 0;
+    width: 100%;
+  }
+  .SideBar.active ~ .Home nav {
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+}
